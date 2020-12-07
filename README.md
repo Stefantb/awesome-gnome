@@ -2,23 +2,27 @@
 
 Allows you to use awesome-wm with GNOME 3 Session infrastructure.
 
-
-## What do I'll get by installing it?
-> In order to manage things your cursor/icon themes, online accounts, etc.
-
-
 ## Requirements
-* awesome
-* GNOME (3.34.x)
-* GDM (optional, but useful)
-* [GNOME Flashback](https://github.com/i3-gnome/i3-gnome/wiki/Tips-&-Tricks#gnome-flashback)
+You should have the following installed:
 
+* awesome
+* make (or build-essential)
+* GDM (optional, but useful)
+* GNOME 3
+* GNOME Flashback
 
 ## Installation from scratch
-Using `make`:
-* download the repo.
-* on the terminal go to the repo directory.
-* `sudo make install`
+To install, run `sudo make install`.
 
----
-MIT - © 2014-2017 [Lorenzo Villani](https://github.com/lvillani). 2017 i3-gnome team.
+### Disable GNOME Flashback's "desktop" application
+
+GNOME Flashback creates a desktop window for desktop icons. To disable the creation of this window, and to enable the wallpaper functionality in its absense, execute the following `gsettings` commands:
+
+```
+    gsettings set org.gnome.gnome-flashback desktop false
+    gsettings set org.gnome.gnome-flashback root-background true
+```
+
+## Uninstallation
+
+To uninstall, run `sudo make uninstall`.
