@@ -26,6 +26,7 @@ install:
 	$(INSTALL) -m0644 -D session/awesome-gnome.session $(PATH_WM_GNOME_SESSION)
 	$(INSTALL) -m0755 -D session/awesome-gnome $(PATH_WM_GNOME)
 	$(INSTALL) -m0755 -D session/gnome-session-awesome $(PATH_GNOME_SESSION_WM)
+	scripts/build-awesome-gnome-systemd-dropin.sh
 
 
 
