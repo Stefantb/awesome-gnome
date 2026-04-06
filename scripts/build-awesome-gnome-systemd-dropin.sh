@@ -6,7 +6,7 @@ dest_dir="/usr/lib/systemd/user/gnome-session@awesome-gnome.target.d"
 mkdir -p ${dest_dir}
 chmod 0755 ${dest_dir}
 
-src_dir="/usr/lib/systemd/user/gnome-session@gnome-flashback-compiz.target.d"
+src_dir="/usr/lib/systemd/user/gnome-session@gnome-flashback-metacity.target.d"
 src_file="session.conf"
 
 dest_file="awesome-gnome.session.conf"
