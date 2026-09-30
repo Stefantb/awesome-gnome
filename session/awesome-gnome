@@ -5,6 +5,13 @@ test -n "$DESKTOP_AUTOSTART_ID" && {
     dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:awesome-gnome" "string:$DESKTOP_AUTOSTART_ID"
 }
 
+# Wait for gsd-xsettings to publish Xcursor.size, otherwise awesome picks a
+# cursor size from the screen height, which is too large on big monitors.
+for _ in $(seq 50); do
+    xrdb -query 2>/dev/null | grep -q '^Xcursor.size:' && break
+    sleep 0.1
+done
+
 /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
 
 # Logout process.
